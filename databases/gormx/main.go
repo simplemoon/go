@@ -1,0 +1,5 @@
+package gormx
+
+func main() {
+	
+}
