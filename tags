@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/yuanzp/GoProject/go/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/5d506a1a/
+Addr	databases/gormx/example/connector.go	/^	Addr string \/\/ 地址$/;"	m	struct:main.Config	typeref:typename:string
+Addr	databases/gormx/example/example.go	/^	Addr    string `gorm:"column:addr;size:8"`$/;"	m	struct:main.School	typeref:typename:string
+Age	databases/gormx/example/create.go	/^	Age int$/;"	m	struct:main.MyUser	typeref:typename:int
+Age	databases/gormx/example/example.go	/^	Age    int          `gorm:"column:age;size:3;check:age>=3"`$/;"	m	struct:main.Student	typeref:typename:int
+Age	databases/gormx/gen/query.go	/^	Age int$/;"	m	struct:main.User	typeref:typename:int
+Birthday	databases/gormx/example/create.go	/^	Birthday time.Time$/;"	m	struct:main.MyUser	typeref:typename:time.Time
+Code	databases/gormx/example/example.go	/^	Code  string$/;"	m	struct:main.Product	typeref:typename:string
+Comment	databases/gormx/example/example.go	/^	Comment string `gorm:"column:comment;Comment"`$/;"	m	struct:main.School	typeref:typename:string
+Config	databases/gormx/example/connector.go	/^type Config struct {$/;"	s	package:main
+ConncetSqlServer	databases/gormx/example/connector.go	/^func ConncetSqlServer() (*gorm.DB, error) {$/;"	f	package:main	typeref:typename:(*gorm.DB, error)
+ConnectClickHouse	databases/gormx/example/connector.go	/^func ConnectClickHouse() (*gorm.DB, error) {$/;"	f	package:main	typeref:typename:(*gorm.DB, error)
+ConnectMysql	databases/gormx/example/connector.go	/^func ConnectMysql() (*gorm.DB, error) {$/;"	f	package:main	typeref:typename:(*gorm.DB, error)
+ConnectPostgres	databases/gormx/example/connector.go	/^func ConnectPostgres() (*gorm.DB, error) {$/;"	f	package:main	typeref:typename:(*gorm.DB, error)
+ConnectSqlite	databases/gormx/example/connector.go	/^func ConnectSqlite() (*gorm.DB, error) {$/;"	f	package:main	typeref:typename:(*gorm.DB, error)
+Create	databases/gormx/example/example.go	/^	Create time.Time    `gorm:"column:create;autoCreateTime"`$/;"	m	struct:main.Student	typeref:typename:time.Time
+CreateUser	databases/gormx/example/create.go	/^func CreateUser() {$/;"	f	package:main
+DBName	databases/gormx/example/connector.go	/^	DBName string \/\/ DB 的名称$/;"	m	struct:main.Config	typeref:typename:string
+Delete	databases/gormx/example/example.go	/^	Delete sql.NullTime `gorm:"column:delete;autoDeleteTime"`$/;"	m	struct:main.Student	typeref:typename:sql.NullTime
+Get	test/method_test.go	/^func (t T) Get() int {$/;"	f	struct:main.T	typeref:typename:int
+GetByID	databases/gormx/gen/query.go	/^	GetByID(id int) (gen.T, error)$/;"	n	interface:main.Querier	typeref:typename:(gen.T, error)
+GetByRoles	databases/gormx/gen/query.go	/^	GetByRoles(rolesName ...string) ([]*gen.T, error)$/;"	n	interface:main.Querier	typeref:typename:([]*gen.T, error)
+GetClickHouseStr	databases/gormx/example/connector.go	/^func (c *Config) GetClickHouseStr() string {$/;"	f	struct:main.Config	typeref:typename:string
+GetConnectStr	databases/gormx/example/connector.go	/^func (c *Config) GetConnectStr() string {$/;"	f	struct:main.Config	typeref:typename:string
+GetPostgreSQLStr	databases/gormx/example/connector.go	/^func (c *Config) GetPostgreSQLStr() string {$/;"	f	struct:main.Config	typeref:typename:string
+GetSqlServerStr	databases/gormx/example/connector.go	/^func (c *Config) GetSqlServerStr() string {$/;"	f	struct:main.Config	typeref:typename:string
+ID	databases/gormx/example/example.go	/^	ID     int          `gorm:"column:idx;autoIncrement;primaryKey"`$/;"	m	struct:main.Student	typeref:typename:int
+ID	databases/gormx/example/example.go	/^	ID     int `gorm:"column:idx;autoIncrement;primaryKey;"`$/;"	m	struct:main.Scores	typeref:typename:int
+InsertValue	databases/gormx/gen/query.go	/^	InsertValue(name string, age int) error	$/;"	n	interface:main.Querier	typeref:typename:error
+Model	databases/gormx/example/create.go	/^	gorm.Model$/;"	M	struct:main.MyUser	typeref:typename:gorm.Model
+Model	databases/gormx/example/example.go	/^	gorm.Model$/;"	M	struct:main.Product	typeref:typename:gorm.Model
+MyUser	databases/gormx/example/create.go	/^type MyUser struct {$/;"	s	package:main
+Name	databases/gormx/example/create.go	/^	Name string$/;"	m	struct:main.MyUser	typeref:typename:string
+Name	databases/gormx/example/example.go	/^	Name    string `gorm:"column:name;size:16;"`$/;"	m	struct:main.School	typeref:typename:string
+Name	databases/gormx/example/example.go	/^	Name   string `gorm:"unique_index"`$/;"	m	struct:main.User	typeref:typename:string
+Name	databases/gormx/gen/query.go	/^	Name string$/;"	m	struct:main.User	typeref:typename:string
+Number	databases/gormx/example/example.go	/^	Number string `gorm:"unique_index"`$/;"	m	struct:main.User	typeref:typename:string
+Password	databases/gormx/example/connector.go	/^	Password string \/\/ 密码$/;"	m	struct:main.Config	typeref:typename:string
+Port	databases/gormx/example/connector.go	/^	Port int \/\/ 端口号$/;"	m	struct:main.Config	typeref:typename:int
+Price	databases/gormx/example/example.go	/^	Price uint$/;"	m	struct:main.Product	typeref:typename:uint
+Product	databases/gormx/example/example.go	/^type Product struct {$/;"	s	package:main
+ProductT	databases/gormx/example/example.go	/^func ProductT(db *gorm.DB) {$/;"	f	package:main
+Querier	databases/gormx/gen/query.go	/^type Querier interface{$/;"	i	package:main
+School	databases/gormx/example/example.go	/^	School School       `gorm:"embedded;embeddedPrefix:school"`$/;"	m	struct:main.Student	typeref:typename:School
+School	databases/gormx/example/example.go	/^type School struct {$/;"	s	package:main
+ScoreID	databases/gormx/example/example.go	/^	ScoreID   int `gorm:"index:idx_score_id"`$/;"	m	struct:main.StudentScore	typeref:typename:int
+Scores	databases/gormx/example/example.go	/^	Scores int `gorm:"column:score;"`$/;"	m	struct:main.Scores	typeref:typename:int
+Scores	databases/gormx/example/example.go	/^type Scores struct {$/;"	s	package:main
+Set	test/method_test.go	/^func (t *T) Set(a int) {$/;"	f	struct:main.T
+SetConnectPool	databases/gormx/example/connector.go	/^func SetConnectPool(db *gorm.DB) {$/;"	f	package:main
+Student	databases/gormx/example/example.go	/^type Student struct {$/;"	s	package:main
+StudentID	databases/gormx/example/example.go	/^	StudentID int `gorm:"index:idx_student_id"`$/;"	m	struct:main.StudentScore	typeref:typename:int
+StudentScore	databases/gormx/example/example.go	/^type StudentScore struct {$/;"	s	package:main
+StudentT	databases/gormx/example/example.go	/^func StudentT(db *gorm.DB) {$/;"	f	package:main
+T	test/method_test.go	/^type T struct {$/;"	s	package:main
+TestStruct	test/method_test.go	/^func TestStruct(t *testing.T) {$/;"	f	package:main
+Update	databases/gormx/example/example.go	/^	Update time.Time    `gorm:"column:update;autoUpdateTime"`$/;"	m	struct:main.Student	typeref:typename:time.Time
+User	databases/gormx/example/example.go	/^type User struct {$/;"	s	package:main
+User	databases/gormx/gen/query.go	/^type User struct {$/;"	s	package:main
+UserName	databases/gormx/example/connector.go	/^	UserName string \/\/ 用户名$/;"	m	struct:main.Config	typeref:typename:string
+a	test/method_test.go	/^	a int$/;"	m	struct:main.T	typeref:typename:int
+go	README.md	/^# go$/;"	c
+gormx	databases/gormx/main.go	/^package gormx$/;"	p
+logger 的类库	logger/readme.md	/^## logger 的类库$/;"	s
+main	databases/gormx/example/connector.go	/^package main$/;"	p
+main	databases/gormx/example/create.go	/^package main$/;"	p
+main	databases/gormx/example/example.go	/^func main() {$/;"	f	package:main
+main	databases/gormx/example/example.go	/^package main$/;"	p
+main	databases/gormx/gen/query.go	/^func main() {$/;"	f	package:main
+main	databases/gormx/gen/query.go	/^package main$/;"	p
+main	databases/gormx/main.go	/^func main() {$/;"	f	package:gormx
+main	test/method_test.go	/^package main$/;"	p
+常用的 http 框架的封装与使用	httpserverx/readme.md	/^## 常用的 http 框架的封装与使用$/;"	s
+常用的 logger 类库的封装与使用	logger/readme.md	/^### 常用的 logger 类库的封装与使用$/;"	S	section:logger 的类库
+数据库的类库的使用案例	databases/readme.md	/^## 数据库的类库的使用案例$/;"	s
+文档地址	databases/gormx/docs/readme.md	/^### 文档地址$/;"	S
+框架使用前的准备	databases/gormx/docs/readme.md	/^### 框架使用前的准备$/;"	S
+框架的选型	httpserverx/readme.md	/^### 框架的选型$/;"	S	section:常用的 http 框架的封装与使用
+涉及到的开源数据库项目	databases/readme.md	/^### 涉及到的开源数据库项目$/;"	S	section:数据库的类库的使用案例
+结论经验	databases/gormx/docs/readme.md	/^#### 结论经验$/;"	t	subsection:文档地址

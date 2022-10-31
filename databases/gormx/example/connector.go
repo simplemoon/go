@@ -88,7 +88,8 @@ func ConnectPostgres() (*gorm.DB, error) {
 }
 
 func ConnectSqlite() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
+	// db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
 	return db, err
 }
 

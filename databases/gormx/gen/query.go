@@ -6,10 +6,10 @@ import (
 
 type User struct {
 	Name string
-	Age int
+	Age  int
 }
 
-type Querier interface{
+type Querier interface {
 	// SELECT * FROM @@table WHERE id=@id
 	GetByID(id int) (gen.T, error)
 
@@ -22,19 +22,16 @@ type Querier interface{
 	// InsertValue insert value
 	//
 	// INSERT INTO @@table (name, age) VALUES (@name, @age)
-	InsertValue(name string, age int) error	
+	InsertValue(name string, age int) error
 }
 
 func main() {
 
 	g := gen.NewGenerator(gen.Config{})
 
-	g.ApplyInterface(func (Querier)  {
-		
+	g.ApplyInterface(func(Querier) {
+
 	}, User{}, g.GenerateModel("employee"))
 
 	g.Execute()
 }
-
-
-

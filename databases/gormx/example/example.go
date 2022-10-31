@@ -11,46 +11,44 @@ import (
 
 type Product struct {
 	gorm.Model
-	Code string
+	Code  string
 	Price uint
 }
 
 // 学校的名称
 type School struct {
-	Name string `gorm:"column:name;size:16;"`
-	Addr string `gorm:"column:addr;size:8"`
+	Name    string `gorm:"column:name;size:16;"`
+	Addr    string `gorm:"column:addr;size:8"`
 	Comment string `gorm:"column:comment;Comment"`
 }
 
-
 // Student test id, updateAt, createAt, deleteAt
 type Student struct {
-	ID int `gorm:"column:idx;autoIncrement;primaryKey"`	
-	Create time.Time `gorm:"column:create;autoCreateTime"`
-	Update time.Time `gorm:"column:update;autoUpdateTime"`
+	ID     int          `gorm:"column:idx;autoIncrement;primaryKey"`
+	Create time.Time    `gorm:"column:create;autoCreateTime"`
+	Update time.Time    `gorm:"column:update;autoUpdateTime"`
 	Delete sql.NullTime `gorm:"column:delete;autoDeleteTime"`
-	School School `gorm:"embedded;embeddedPrefix:school"`
-	Age int `gorm:"column:age;size:3;check:age>=3"`
+	School School       `gorm:"embedded;embeddedPrefix:school"`
+	Age    int          `gorm:"column:age;size:3;check:age>=3"`
 }
 
 type Scores struct {
-	ID int `gorm:"column:idx;autoIncrement;primaryKey;"`
+	ID     int `gorm:"column:idx;autoIncrement;primaryKey;"`
 	Scores int `gorm:"column:score;"`
 }
 
 // 测试联合索引
 type StudentScore struct {
 	// ID int `gorm:"column:idx"`
-    StudentID int `gorm:"index:idx_student_id"`
-    ScoreID int `gorm:"index:idx_score_id"`
+	StudentID int `gorm:"index:idx_student_id"`
+	ScoreID   int `gorm:"index:idx_score_id"`
 }
 
-
+// User 用户信息
 type User struct {
-    Name   string `gorm:"unique_index"`
-    Number string `gorm:"unique_index"`
+	Name   string `gorm:"unique_index"`
+	Number string `gorm:"unique_index"`
 }
-
 
 func ProductT(db *gorm.DB) {
 	// 迁移 schema
@@ -58,9 +56,9 @@ func ProductT(db *gorm.DB) {
 
 	// Create
 	db.Create(&Product{
-        Code: "D42",
-        Price: 100,
-    })
+		Code:  "D42",
+		Price: 100,
+	})
 
 	// Read
 	var product Product
@@ -103,18 +101,17 @@ func StudentT(db *gorm.DB) {
 	}
 	db.Create(sch2)
 
-
 	// 分数
 	sdu1 := &Student{
 		School: *sch1,
-		Age: 18,
+		Age:    18,
 	}
 	db.Create(&sdu1)
 	fmt.Printf("%+v\n", sdu1)
 
 	sdu2 := &Student{
 		School: *sch2,
-        Age: 30,
+		Age:    30,
 	}
 	db.Create(&sdu2)
 	fmt.Printf("%+v\n", sdu2)
@@ -125,13 +122,11 @@ func StudentT(db *gorm.DB) {
 	db.Create(&scroe1)
 	fmt.Printf("%+v\n", scroe1)
 
-
 	scroe2 := Scores{
 		Scores: 50,
 	}
 	db.Create(&scroe2)
 	fmt.Printf("%+v\n", scroe2)
-
 
 	ss1 := StudentScore{
 		// ID:        0,
@@ -149,7 +144,6 @@ func StudentT(db *gorm.DB) {
 	db.Create(&ss2)
 	fmt.Printf("%+v\n", ss2)
 
-
 	ss3 := StudentScore{
 		// ID:        0,
 		StudentID: sdu2.ID,
@@ -163,8 +157,6 @@ func StudentT(db *gorm.DB) {
 	}
 }
 
-
-
 func main() {
 	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{
 		FullSaveAssociations: true,
@@ -176,5 +168,7 @@ func main() {
 	// ProductT(db)
 
 	StudentT(db)
-}
 
+	// 创建用户
+	CreateUser()
+}

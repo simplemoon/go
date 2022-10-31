@@ -81,3 +81,7 @@ gorm 文档 [https://gorm.io/zh_CN/gen/sql_annotation.html]
    1. `autoIncrement` 会自动推断类型,并且设置称为主键
 
    2. 踩坑记录 `https://www.cnblogs.com/rickiyang/p/14517120.html`
+
+   3. Omit之中传入的字段，忽略大小写。
+
+   4. 
