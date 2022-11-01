@@ -34,7 +34,7 @@ type Student struct {
 
 type Scores struct {
 	ID     int `gorm:"column:idx;autoIncrement;primaryKey;"`
-	Scores int `gorm:"column:score;"`
+	Scores int `gorm:"column:score"`
 }
 
 // 测试联合索引
