@@ -17,13 +17,13 @@ import (
 type Config struct {
 	UserName string // 用户名
 	Password string // 密码
-	Addr string // 地址
-	Port int // 端口号
-	DBName string // DB 的名称
+	Addr     string // 地址
+	Port     int    // 端口号
+	DBName   string // DB 的名称
 }
 
 func (c *Config) GetConnectStr() string {
-	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", 
+	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		c.UserName, c.Password, c.Addr, c.Port, c.DBName)
 }
 
@@ -37,11 +37,9 @@ func (c *Config) GetSqlServerStr() string {
 }
 
 func (c *Config) GetClickHouseStr() string {
-	return fmt.Sprintf("tcp://%s:%d?database=%s&username=%s&password=%s&read_timeout=10&write_timeout=20", 
-	c.Addr, c.Port, c.DBName, c.UserName, c.Password)
+	return fmt.Sprintf("tcp://%s:%d?database=%s&username=%s&password=%s&read_timeout=10&write_timeout=20",
+		c.Addr, c.Port, c.DBName, c.UserName, c.Password)
 }
-
-
 
 func ConnectMysql() (*gorm.DB, error) {
 	m := Config{
@@ -55,12 +53,12 @@ func ConnectMysql() (*gorm.DB, error) {
 	dsn := m.GetConnectStr()
 	// db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	db, err := gorm.Open(mysql.New(mysql.Config{
-		DSN:                           dsn,
-		SkipInitializeWithVersion:     false,
-		DefaultStringSize:             256,
-		DisableDatetimePrecision:      true,
-		DontSupportRenameIndex:        true,
-		DontSupportRenameColumn:       true,
+		DSN:                       dsn,
+		SkipInitializeWithVersion: false,
+		DefaultStringSize:         256,
+		DisableDatetimePrecision:  true,
+		DontSupportRenameIndex:    true,
+		DontSupportRenameColumn:   true,
 	}), &gorm.Config{})
 
 	if err != nil {
@@ -89,7 +87,9 @@ func ConnectPostgres() (*gorm.DB, error) {
 
 func ConnectSqlite() (*gorm.DB, error) {
 	// db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
-	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{
+		CreateBatchSize: 1000,
+	})
 	return db, err
 }
 
@@ -130,4 +130,3 @@ func SetConnectPool(db *gorm.DB) {
 	sqlDB.SetMaxOpenConns(100)
 	sqlDB.SetConnMaxIdleTime(time.Hour)
 }
-

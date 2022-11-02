@@ -170,5 +170,8 @@ func main() {
 	StudentT(db)
 
 	// 创建用户
-	CreateUser()
+	// CreateUser()
+
+	// 批量创建用户
+	CreateBatchUser()
 }

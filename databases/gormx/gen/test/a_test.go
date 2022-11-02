@@ -6,6 +6,8 @@
 
 package test
 
+import "fmt"
+
 type args struct {
 	a int    // a
 	m string // m
@@ -17,4 +19,8 @@ func (a *args) get() string {
 
 func (a *args) set(m string) {
 	a.m = m
+}
+
+func (a *args) str() string {
+	return fmt.Sprintf("%d -> %s", a.a, a.m)
 }

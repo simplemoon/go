@@ -9,16 +9,15 @@ import (
 
 type MyUser struct {
 	gorm.Model
-	Name string
-	Age int
+	Name     string
+	Age      int
 	Birthday time.Time
 }
 
-
 func CreateUser() {
 	user := MyUser{
-		Name: "yuanzp",
-		Age: 33,
+		Name:     "yuanzp",
+		Age:      33,
 		Birthday: time.Now(),
 	}
 
@@ -37,14 +36,14 @@ func CreateUser() {
 	var users []MyUser
 	for i := 5; i < 205; i++ {
 		users = append(users, MyUser{
-			Name:     "aaa" + strconv.Itoa(i),
-			Age:      18 + i,
+			Name: "aaa" + strconv.Itoa(i),
+			Age:  18 + i,
 		})
 	}
 
 	// db.Create(users)
 	// 数量为 100
-	db.CreateInBatches(users, 100)
+	db.CreateInBatches(&users, 100)
 	for _, u := range users {
 		println("userID: ", u.ID)
 	}
@@ -58,4 +57,25 @@ func CreateUser() {
 		{"Name": "jinzhu_1", "Age": 18},
 		{"Name": "jinzhu_2", "Age": 20},
 	})
+}
+
+func CreateBatchUser() {
+	db, err := ConnectSqlite()
+	if err != nil {
+		panic(err)
+	}
+	db.AutoMigrate(&MyUser{})
+
+	users := [5000]*MyUser{}
+	for i := 0; i < len(users); i++ {
+		users[i] = &MyUser{
+			Name: "aaa_batch_" + strconv.Itoa(i),
+			Age:  18 + i,
+		}
+	}
+
+	db.Create(&users)
+	for _, u := range users {
+		println("userID: ", u.ID)
+	}
 }
