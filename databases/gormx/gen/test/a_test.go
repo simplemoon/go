@@ -24,3 +24,9 @@ func (a *args) set(m string) {
 func (a *args) str() string {
 	return fmt.Sprintf("%d -> %s", a.a, a.m)
 }
+
+func xxxxx() {
+	// a := 0
+	fmt.Println("Hello, world!!!!")
+	return
+}
